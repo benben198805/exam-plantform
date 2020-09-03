@@ -22,7 +22,7 @@ class MemoryAnswerSheetRepositoryTest {
     void should_find_answer_sheet_by_id() {
         // given
         AnswerSheetId answerSheetId = new AnswerSheetId("answerSheetId");
-        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "sid", "eid", "tid", Lists.emptyList());
+        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "studentId", "eid", "tid", Lists.emptyList());
         memoryAnswerSheetRepository.save(answerSheet);
 
         // when
@@ -50,7 +50,7 @@ class MemoryAnswerSheetRepositoryTest {
     void should_save_answer_sheet() {
         // given
         AnswerSheetId answerSheetId = new AnswerSheetId("1");
-        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "sid", "eid", "tid", Lists.emptyList());
+        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "studentId", "eid", "tid", Lists.emptyList());
         // when
         memoryAnswerSheetRepository.save(answerSheet);
         AnswerSheet result = memoryAnswerSheetRepository.find(answerSheetId);
@@ -63,7 +63,7 @@ class MemoryAnswerSheetRepositoryTest {
     void should_update_answer_sheet() {
         // given
         AnswerSheetId answerSheetId = new AnswerSheetId("1");
-        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "sid", "eid", "tid", Lists.emptyList());
+        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "studentId", "eid", "tid", Lists.emptyList());
         memoryAnswerSheetRepository.save(answerSheet);
 
         // when
@@ -79,7 +79,7 @@ class MemoryAnswerSheetRepositoryTest {
     void should_throw_exception_when_update_answer_sheet_with_non_exist_id() {
         // given
         AnswerSheetId answerSheetId = new AnswerSheetId("1");
-        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "sid", "eid", "tid", Lists.emptyList());
+        AnswerSheet answerSheet = AnswerSheet.assignBlankAnswerSheet(answerSheetId, "studentId", "eid", "tid", Lists.emptyList());
 
         // when
         Exception exception = assertThrows(

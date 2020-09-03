@@ -18,7 +18,7 @@ class MemoryCertificationSheetRepositoryTest {
     void should_find_answer_sheet_by_id() {
         // given
         CertificationId certificationId = new CertificationId("id");
-        Certification certification = Certification.generateCertification(certificationId, "cid", "sid", "certificationNumber");
+        Certification certification = Certification.generateCertification(certificationId, "courseId", "studentId", "certificationNumber");
         memoryCertificationSheetRepository.save(certification);
 
         // when

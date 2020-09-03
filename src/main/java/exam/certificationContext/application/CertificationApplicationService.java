@@ -15,8 +15,11 @@ public class CertificationApplicationService {
     private CertificationClient certificationClient;
 
     @Autowired
-    public CertificationApplicationService(MemoryCertificationSheetRepository certificationSheetRepository) {
+    public CertificationApplicationService(MemoryCertificationSheetRepository certificationSheetRepository, StudentClient studentClient, CourseClient courseClient, CertificationClient certificationClient) {
         this.certificationSheetRepository = certificationSheetRepository;
+        this.studentClient = studentClient;
+        this.courseClient = courseClient;
+        this.certificationClient = certificationClient;
     }
 
     public CertificationId generateCertification(GenerateCertificationCommand command) {
