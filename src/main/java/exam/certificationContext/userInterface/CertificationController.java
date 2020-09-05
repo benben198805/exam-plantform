@@ -17,7 +17,7 @@ public class CertificationController {
         this.certificationApplicationService = certificationApplicationService;
     }
 
-    @PostMapping("/generate")
+    @PostMapping("/certifications")
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
     CertificationDTO generate(@RequestBody GenerateCertificationCommand command) {
